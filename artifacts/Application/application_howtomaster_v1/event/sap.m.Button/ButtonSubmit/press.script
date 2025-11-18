@@ -1,0 +1,50 @@
+const tutorialData = {
+    tutorial: {
+        title: inputTitle.getValue().toString() || "",
+        introduction: TextAreaIntro.getValue().toString() || "",
+        text: TextAreaText.getValue().toString() || "",
+        conclusion: TextAreaConclusion.getValue().toString() || "",
+        difficulty: parseInt(sliderInterval1.getValue().toString()) || 0,
+        thumbnail: inputMedia.getValue().toString() || "",
+    },
+};
+
+//validation
+const values = Object.values(tutorialData.tutorial);
+const emptyField = values.some((v) => v === "" || v === "0");
+
+//shows toast
+if (emptyField) {
+    sap.m.MessageToast.show("Please, fill all fields.", {});
+    return;
+}
+
+//if form is validated, post
+fetch("https://api.sheety.co/0591a4c7affee3179cfc504b245d4236/neptuneDemoHowToMasterApi/tutorial", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(tutorialData),
+})
+    .then((response) => {
+        if (!response.ok) throw new Error("Error " + response.status);
+        return response.json();
+    })
+    .then((data) => {
+        console.log("Success", data);
+        sap.m.MessageToast.show("Tutorial posted successfully!", {});
+        inputTitle.setValue("");
+        TextAreaIntro.setValue("");
+        TextAreaText.setValue("");
+        TextAreaConclusion.setValue("");
+        sliderInterval1.setValue(1);
+        inputMedia.setValue("");
+        Image1.setSrc("");
+
+        oApp.to(PageHome)
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+        sap.m.MessageToast.show("Error sending tutorial", {});
+    });

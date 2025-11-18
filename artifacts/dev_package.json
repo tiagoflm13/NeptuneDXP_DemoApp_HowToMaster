@@ -1,0 +1,65 @@
+{
+	"id": "126721cd-d701-4f8b-b43d-761872650aaa",
+	"createdAt": "2025-11-15T09:54:12.000Z",
+	"createdBy": "admin",
+	"git": {
+		"remote": "https://github.com/tiagoflm13/NeptuneDXP_DemoApp_HowToMaster",
+		"branch": "main"
+	},
+	"name": "demoapp_howtomaster",
+	"description": "Package containing everything related to the HowToMaster application.",
+	"ver": "25.11.18.1139",
+	"enableCICD": true,
+	"internalReadOnly": false,
+	"oeVersion": null,
+	"excludeTemplateFiles": false,
+	"roles": [],
+	"apps": [
+		{
+			"id": "2fadb7ab-2684-4823-99d3-71d2be577ead",
+			"application": "application_howtomaster_v1",
+			"title": "application_howtomaster_appbuilder",
+			"description": ""
+		}
+	],
+	"api": [
+		{
+			"id": "42c28f6a-dfae-48b5-9a69-919f8aaef31a",
+			"name": "howtomaster_api",
+			"description": null,
+			"apiGroup": null
+		}
+	],
+	"odataSource": [],
+	"odataMock": [],
+	"dictionary": [],
+	"jsclass": [],
+	"jsscript_group": [],
+	"theme": [],
+	"pdf": [],
+	"rulesengine": [],
+	"reports": [],
+	"api_authentication": [],
+	"api_group": [],
+	"tile": [],
+	"tile_layout": [],
+	"category": [],
+	"tilegroup_layout": [],
+	"launchpad": [],
+	"launchpad_layout": [],
+	"certificates": [],
+	"role": [],
+	"systems": [],
+	"doc": [],
+	"wf_notifications": [],
+	"department": [],
+	"script_scheduler": [],
+	"wf_definition": [],
+	"connector": [],
+	"events": [],
+	"code_snippets": [],
+	"wf_determination": [],
+	"wf_taskaction": [],
+	"theme_ui5": [],
+	"webapp": []
+}
